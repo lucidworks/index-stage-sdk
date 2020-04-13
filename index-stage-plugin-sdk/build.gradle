@@ -1,0 +1,17 @@
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
+dependencies {
+    api 'com.lucidworks-schema:schema-api:1.4.0'
+    api 'org.slf4j:slf4j-api:1.7.28'
+}
+
+jar {
+    manifest {
+        attributes(
+                "Implementation-Version": "${project.version}"
+        )
+    }
+}
