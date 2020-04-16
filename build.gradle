@@ -11,6 +11,9 @@ subprojects {
     apply plugin: 'maven-publish'
     apply plugin: 'jacoco'
 
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
     repositories {
         mavenCentral()
         mavenLocal()

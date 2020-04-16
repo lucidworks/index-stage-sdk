@@ -8,6 +8,9 @@ repositories {
     }
 }
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 version = '0.0.1'
 
 configurations {
@@ -29,7 +32,6 @@ dependencies {
     testImplementation "org.slf4j:slf4j-simple:1.7.30"
     testImplementation "com.lucidworks-plugins.index-stage-sdk:index-stage-sdk-test:1.0.0+"
 }
-
 
 // use this gradle task to assemble plugin zip file
 task assemblePlugin(type: Jar) {

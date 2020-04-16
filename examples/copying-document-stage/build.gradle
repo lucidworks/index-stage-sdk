@@ -8,6 +8,9 @@ repositories {
     }
 }
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 project.version = '0.0.1'
 
 configurations {
@@ -19,7 +22,6 @@ dependencies {
     // Index Stage SDK dependency is required for all plugins, version must be compatible with your Fusion deployment
     provided "com.lucidworks-plugins.index-stage-sdk:index-stage-plugin-sdk:1.0.0+"
 }
-
 
 // specific task that allows to create proper plugin zip file
 task assemblePlugin(type: Jar) {
