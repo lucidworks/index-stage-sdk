@@ -33,7 +33,6 @@ dependencies {
     testImplementation "com.lucidworks-plugins.index-stage-sdk:index-stage-sdk-test:1.0.0+"
 }
 
-
 // use this gradle task to assemble plugin zip file
 task assemblePlugin(type: Jar) {
     group("build")
