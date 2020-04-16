@@ -23,7 +23,6 @@ dependencies {
     provided "com.lucidworks-plugins.index-stage-sdk:index-stage-plugin-sdk:1.0.0+"
 }
 
-
 // specific task that allows to create proper plugin zip file
 task assemblePlugin(type: Jar) {
     group("build")
