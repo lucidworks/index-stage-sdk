@@ -15,7 +15,7 @@ Example of custom META-INF/MANIFEST.MF file:
 ```
 Manifest-Version: 1.0
 Plugin-Id: sample-plugin
-Plugin-SDK-Version: 1.0.0
+Plugin-SDK-Version: 1.1.0
 Plugin-Base-Package: com.lucidworks.sample
 Plugin-Version: 0.0.1
 

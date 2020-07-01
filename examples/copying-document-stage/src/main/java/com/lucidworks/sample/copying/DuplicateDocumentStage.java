@@ -23,7 +23,7 @@ public class DuplicateDocumentStage extends IndexStageBase<DuplicateDocumentConf
   public void process(Document original, Context context, Consumer<Document> output) {
     // Create a copy of a document and push it
     Document copy = newDocument(original.getId() + "-copy");
-    for (Document.Field originalField : original.fields()) {
+    for (Document.Field originalField : original.allFields()) {
       copy.field(originalField.getName()).set(originalField.get());
     }
     copy.field(COPY_MARK_FIELD_NAME).set(Boolean.TRUE);
