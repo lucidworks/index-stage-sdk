@@ -75,6 +75,11 @@ public class TestDocument implements Document {
     return new HashSet(fields.values());
   }
 
+  @Override
+  public Set<Field<Object>> allFields() {
+    return new HashSet(fields.values());
+  }
+
   static class TestField<T> implements Field<T> {
 
     private String name;
