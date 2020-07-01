@@ -72,9 +72,10 @@ public class TestDocument implements Document {
 
   @Override
   public Set<Field<Object>> fields() {
-    return fields.entrySet().stream()
+    return new HashSet(fields.entrySet().stream()
         .filter(e -> !e.getKey().startsWith("_lw_"))
-        .map(Map.Entry::getValue).collect(Collectors.toSet());
+        .map(Map.Entry::getValue)
+        .collect(Collectors.toSet()));
   }
 
   @Override
