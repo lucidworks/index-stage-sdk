@@ -36,7 +36,7 @@ classes can be found at [index-stage-plugin-sdk documentation](../index-stage-pl
 Index Stage SDK provides a number of helper classes to simplify unit testing of index stage plugins. 
 To take advantage of the testing framework, plugin project needs to add the following test dependency:
 ```groovy
-testImplementation "com.lucidworks-plugins.index-stage-sdk:index-stage-sdk-test:1.0.0+"
+testImplementation "com.lucidworks-plugins.index-stage-sdk:index-stage-sdk-test:1.+"
 ```
 Once the dependency is added, unit test classes can extend `com.lucidworks.indexing.sdk.test.IndexStageTestBase` and 
 use provided convenience methods to create test documents, index stage configurations and index stage instances. 

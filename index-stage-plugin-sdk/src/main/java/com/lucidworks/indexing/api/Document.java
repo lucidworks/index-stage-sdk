@@ -81,11 +81,18 @@ public interface Document {
   <T> Field<T> field(String fieldName, Class<T> fieldClass);
 
   /**
-   * Get all fields document contains.
+   * Get all fields document contains, excluding those that are reserved for internal use
    *
    * @return Set of document fields
    */
   Set<Field<Object>> fields();
+
+  /**
+   * Get all fields document contains, including those that are reserved for internal use.
+   *
+   * @return Set of document fields
+   */
+  Set<Field<Object>> allFields();
 
   /**
    * Representation of single field in document. Fields can be multivalued

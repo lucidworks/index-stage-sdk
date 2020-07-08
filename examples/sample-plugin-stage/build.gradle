@@ -20,7 +20,7 @@ configurations {
 
 dependencies {
     // Index Stage SDK dependency is required for all plugins, version must be compatible with your Fusion deployment
-    provided "com.lucidworks-plugins.index-stage-sdk:index-stage-plugin-sdk:1.0.0+"
+    provided "com.lucidworks-plugins.index-stage-sdk:index-stage-plugin-sdk:1.+"
 
     // prometheus client dependency is only needed if plugins are publishing custom metrics via Fusion
     provided 'io.prometheus:simpleclient_dropwizard:0.7.0'
@@ -30,7 +30,7 @@ dependencies {
     testImplementation "junit:junit:4.13"
     testImplementation "org.mockito:mockito-core:3.2.4"
     testImplementation "org.slf4j:slf4j-simple:1.7.30"
-    testImplementation "com.lucidworks-plugins.index-stage-sdk:index-stage-sdk-test:1.0.0+"
+    testImplementation "com.lucidworks-plugins.index-stage-sdk:index-stage-sdk-test:1.+"
 }
 
 // use this gradle task to assemble plugin zip file
@@ -40,7 +40,7 @@ task assemblePlugin(type: Jar) {
     manifest {
         attributes 'Plugin-Id': 'sample-plugin'
         attributes 'Plugin-Version': '0.0.1'
-        attributes 'Plugin-SDK-Version': '1.0.0'
+        attributes 'Plugin-SDK-Version': '1.1.0'
         attributes 'Plugin-Base-Package': 'com.lucidworks.sample'
     }
 
