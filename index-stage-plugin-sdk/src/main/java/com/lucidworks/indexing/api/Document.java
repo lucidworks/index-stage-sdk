@@ -177,5 +177,20 @@ public interface Document {
      * @return This field
      */
     Field<T> map(UnaryOperator<T> mapper);
+
+    /**
+     * Add hint value to the field.
+     *
+     * @param hint Hint value
+     * @return This field
+     */
+    Field<T> hint(String... hint);
+
+    /**
+     * Get all hints for this field.
+     *
+     * @return Field hints
+     */
+    Set<String> getHints();
   }
 }

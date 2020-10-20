@@ -4,6 +4,7 @@ import com.lucidworks.indexing.api.Document;
 import com.lucidworks.indexing.api.Types;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -87,7 +88,7 @@ public class TestDocument implements Document {
 
     private String name;
     private List<T> values = new ArrayList<>();
-    private Set<Types> hints = new HashSet<>();
+    private Set<String> hints = new HashSet<>();
     private boolean multivalued = false;
 
     public TestField(String name) {
@@ -133,7 +134,7 @@ public class TestDocument implements Document {
 
     @Override
     public Field<T> type(Types type) {
-      hints.add(type);
+      hints.add(type.getHint());
       return this;
     }
 
@@ -154,12 +155,19 @@ public class TestDocument implements Document {
       return this;
     }
 
-    public boolean isMultivalued() {
-      return multivalued;
+    @Override
+    public Field<T> hint(String... hint) {
+      hints.addAll(Arrays.asList(hint));
+      return this;
     }
 
-    public Set<Types> getHints() {
+    @Override
+    public Set<String> getHints() {
       return hints;
+    }
+
+    public boolean isMultivalued() {
+      return multivalued;
     }
   }
 }
