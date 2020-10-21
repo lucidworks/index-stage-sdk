@@ -156,6 +156,14 @@ public interface Document {
     Field<T> type(Types type);
 
     /**
+     * Set atomic update modifier hint. This will tell Fusion what atomic update operation to apply to the field, if any.
+     *
+     * @param operation Operation modifier value to be set for the field
+     * @return This field
+     */
+    Field<T> operation(Operations operation);
+
+    /**
      * Set multivalued field hint. This will tell Fusion to use multivalued Solr field type for this field
      * when saving document to collection.
      *
@@ -177,5 +185,20 @@ public interface Document {
      * @return This field
      */
     Field<T> map(UnaryOperator<T> mapper);
+
+    /**
+     * Add hint value to the field.
+     *
+     * @param hint Hint value
+     * @return This field
+     */
+    Field<T> hint(String... hint);
+
+    /**
+     * Get all hints for this field.
+     *
+     * @return Field hints
+     */
+    Set<String> getHints();
   }
 }

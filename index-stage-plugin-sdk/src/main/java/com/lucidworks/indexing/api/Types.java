@@ -16,7 +16,7 @@ public enum Types {
   BINARY("type_binary"),
   LOCATION("type_location");
 
-  private String hint;
+  private final String hint;
 
   Types(String hint) {
     this.hint = hint;
