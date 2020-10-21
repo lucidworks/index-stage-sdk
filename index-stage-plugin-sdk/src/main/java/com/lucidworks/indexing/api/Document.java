@@ -156,6 +156,14 @@ public interface Document {
     Field<T> type(Types type);
 
     /**
+     * Set atomic update modifier hint. This will tell Fusion what atomic update operation to apply to the field.
+     *
+     * @param operation Operation modifier value to be set for the field
+     * @return This field
+     */
+    Field<T> operation(Operations operation);
+
+    /**
      * Set multivalued field hint. This will tell Fusion to use multivalued Solr field type for this field
      * when saving document to collection.
      *

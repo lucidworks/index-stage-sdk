@@ -1,6 +1,7 @@
 package com.lucidworks.indexing.sdk.test;
 
 import com.lucidworks.indexing.api.Document;
+import com.lucidworks.indexing.api.Operations;
 import com.lucidworks.indexing.api.Types;
 
 import java.util.ArrayList;
@@ -135,6 +136,12 @@ public class TestDocument implements Document {
     @Override
     public Field<T> type(Types type) {
       hints.add(type.getHint());
+      return this;
+    }
+
+    @Override
+    public Field<T> operation(Operations operation) {
+      hints.add(operation.getHint());
       return this;
     }
 
