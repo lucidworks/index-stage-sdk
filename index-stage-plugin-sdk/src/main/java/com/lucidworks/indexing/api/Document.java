@@ -156,7 +156,7 @@ public interface Document {
     Field<T> type(Types type);
 
     /**
-     * Set atomic update modifier hint. This will tell Fusion what atomic update operation to apply to the field.
+     * Set atomic update modifier hint. This will tell Fusion what atomic update operation to apply to the field, if any.
      *
      * @param operation Operation modifier value to be set for the field
      * @return This field
