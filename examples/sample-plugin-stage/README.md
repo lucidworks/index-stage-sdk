@@ -22,7 +22,7 @@ You can deploy the example plugins via Fusion UI ("Blobs" section) or by using `
 
 Alternatively you can also deploy plugin via Fusion REST API by using `curl`:
 ```bash
-curl -u [user]:[password] -X PUT -H "Content-Type:application/zip" --data-binary @sample-plugin-stage-0.0.1.zip https://[fusion url]/api/index-stages-plugins
+curl -u [user]:[password] -X PUT -H "Content-Type:application/zip" --data-binary @sample-plugin-stage-0.0.1.zip https://[fusion url]/api/index-stage-plugins
 ```
 
 After successful deployment new stages should be visible in the `Stages` list in the Fusion Index Pipelines UI.
