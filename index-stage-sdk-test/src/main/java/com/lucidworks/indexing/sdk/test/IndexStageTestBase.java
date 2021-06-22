@@ -71,7 +71,7 @@ public abstract class IndexStageTestBase<C extends IndexStageConfig> {
    * The callback can be used to setup return values for the config mock, e.g.
    *
    * <pre>
-   *   SimpleStageConfig stageConfig = newConfig(SimpleStageConfig.class, config -> {
+   *   SimpleStageConfig stageConfig = newConfig(SimpleStageConfig.class, config -&gt; {
    *     when(config.field()).thenReturn("field_name");
    *     when(config.text()).thenReturn("text_value");
    *   });
