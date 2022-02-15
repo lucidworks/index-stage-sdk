@@ -2,6 +2,7 @@ package com.lucidworks.indexing.sdk.test;
 
 import com.lucidworks.indexing.api.Document;
 import com.lucidworks.indexing.api.IndexStage;
+import com.lucidworks.indexing.api.fusion.Documents;
 import com.lucidworks.indexing.api.fusion.Fusion;
 import com.lucidworks.indexing.config.IndexStageConfig;
 import org.junit.runner.RunWith;
@@ -10,6 +11,8 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.function.Consumer;
+
+import static org.mockito.ArgumentMatchers.any;
 
 /**
  * Base class for index stage unit tests.
@@ -31,10 +34,19 @@ public abstract class IndexStageTestBase<C extends IndexStageConfig> {
    * @throws ReflectiveOperationException when unable to instantiate stage class using default no param constructor
    */
   public <S extends IndexStage<C>> S createStage(Class<S> stageClass, C config) throws ReflectiveOperationException {
+    mockDocumentsInFusion();
+
     S stage = stageClass.getDeclaredConstructor().newInstance();
     stage.init(config, fusion);
 
     return stage;
+  }
+
+  private void mockDocumentsInFusion() {
+    Documents documents = Mockito.mock(Documents.class);
+    Mockito.when(documents.newDocument()).then(invocation -> newDocument());
+    Mockito.when(documents.newDocument(any())).then(invocation -> newDocument(invocation.getArgument(0)));
+    Mockito.when(fusion.documents()).thenReturn(documents);
   }
 
   /**
