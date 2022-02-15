@@ -44,8 +44,8 @@ public abstract class IndexStageTestBase<C extends IndexStageConfig> {
 
   private void mockDocumentsInFusion() {
     Documents documents = Mockito.mock(Documents.class);
-    Mockito.when(documents.newDocument()).thenReturn(new TestDocument(null));
-    Mockito.when(documents.newDocument(any())).then(invocation -> new TestDocument(invocation.getArgument(0)));
+    Mockito.when(documents.newDocument()).then(invocation -> newDocument());
+    Mockito.when(documents.newDocument(any())).then(invocation -> newDocument(invocation.getArgument(0)));
     Mockito.when(fusion.documents()).thenReturn(documents);
   }
 
