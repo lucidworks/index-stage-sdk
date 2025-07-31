@@ -11,3 +11,4 @@ The resources include documentation and getting started guides, as well as examp
 # Fusion Version
 
 The Index Stage SDK is available for use starting in Fusion 5.1
+
