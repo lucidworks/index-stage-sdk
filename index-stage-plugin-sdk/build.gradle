@@ -4,7 +4,7 @@ java {
 }
 
 dependencies {
-    api 'com.lucidworks-schema:schema-api:1.4.0'
+    api "com.lucidworks-schema:schema-api:${schemaApiVersion}"
     api 'org.slf4j:slf4j-api:1.7.28'
 }
 

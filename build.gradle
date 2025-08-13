@@ -6,13 +6,17 @@ allprojects {
     apply plugin: 'nebula.release'
 }
 
+repositories {
+    mavenCentral()
+}
+
 subprojects {
     apply plugin: 'java-library'
     apply plugin: 'maven-publish'
     apply plugin: 'jacoco'
 
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 
     repositories {
         mavenCentral()
@@ -36,7 +40,7 @@ subprojects {
         repositories {
             mavenLocal()
             maven {
-                url project.hasProperty('repositoryUrl') ? project.property('repositoryUrl') : ''
+                url project.hasProperty('releaseUrl') ? project.property('releaseUrl') : ''
                 credentials {
                     username project.hasProperty('lucidArtifactoryUsername') ? project.property('lucidArtifactoryUsername') : ''
                     password project.hasProperty('lucidArtifactoryPassword') ? project.property('lucidArtifactoryPassword') : ''

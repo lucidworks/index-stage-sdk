@@ -10,7 +10,7 @@ Sample project with two indexing stages.
 This is also a demonstration of a basic gradle project that assembles Fusion index stage plugin zip.
 
 # Build
-To create a plugin call ```./gradlew -p examples/sample-plugin-stage assemblePlugin``` from the main folder.
+To create a plugin call ```./gradlew -p examples/sample-plugin-stage clean assemblePlugin``` from the main folder.
 This will create a plugin zip file (with required manifest file) inside the ```build/libs``` folder
 
 # Deploy
