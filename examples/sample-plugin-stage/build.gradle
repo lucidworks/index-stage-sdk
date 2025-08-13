@@ -40,10 +40,10 @@ task assemblePlugin(type: Jar) {
     manifest {
         attributes 'Plugin-Id': 'sample-plugin'
         attributes 'Plugin-Version': "${project.version}"
-        attributes 'Plugin-SDK-Version': "${queryStagePluginSDKVersion}"
+        attributes 'Plugin-SDK-Version': "${indexStagePluginSDKVersion}"
         attributes 'Plugin-Base-Package': 'com.lucidworks.sample'
         attributes "Build-JDK": "${System.properties['java.version']} (${System.properties['java.vendor']} ${System.properties['java.vm.version']})"
-        attributes "Dependencies": "index-stage-plugin-sdk:${queryStagePluginSDKVersion}"
+        attributes "Dependencies": "index-stage-plugin-sdk:${indexStagePluginSDKVersion}"
     }
 
     into('lib') {

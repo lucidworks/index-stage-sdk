@@ -11,7 +11,10 @@ dependencies {
 jar {
     manifest {
         attributes(
-                "Implementation-Version": "${project.version}"
+                "Implementation-Version": "${project.version}",
+                "SDK-Version": "${project.version}",
+                "Build-Jdk": "${System.properties['java.version']} (${System.properties['java.vendor']} ${System.properties['java.vm.version']})",
+                "Dependencies": "schema-api:${schemaApiVersion}"
         )
     }
 }
