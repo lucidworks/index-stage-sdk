@@ -5,7 +5,7 @@ This is also a demonstration how single stage can emit multiple documents while 
 
 
 # Build
-To create a plugin call ```./gradlew -p examples/copying-document-stage assemblePlugin``` in the main folder.
+To create a plugin call ```./gradlew -p examples/copying-document-stage clean assemblePlugin``` in the main folder.
 This will create a plugin zip file (with required manifest file) within the ```build/libs``` folder
 
 # Deploy

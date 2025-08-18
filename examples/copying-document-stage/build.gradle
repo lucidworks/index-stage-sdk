@@ -8,10 +8,10 @@ repositories {
     }
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 
-project.version = '0.0.1'
+project.version = '0.0.2'//controls the version of the plugin jar and the zip file.
 
 configurations {
     provided // configuration for dependencies that are already present in Fusion
@@ -20,12 +20,12 @@ configurations {
 
 dependencies {
     // Index Stage SDK dependency is required for all plugins, version must be compatible with your Fusion deployment
-    provided "com.lucidworks-plugins.index-stage-sdk:index-stage-plugin-sdk:1.+"
+    provided "com.lucidworks-plugins.index-stage-sdk:index-stage-plugin-sdk:${indexStagePluginSDKVersion}"
 
     testImplementation "junit:junit:4.13"
     testImplementation "org.mockito:mockito-core:3.2.4"
     testImplementation "org.slf4j:slf4j-simple:1.7.30"
-    testImplementation "com.lucidworks-plugins.index-stage-sdk:index-stage-sdk-test:1.+"
+    testImplementation "com.lucidworks-plugins.index-stage-sdk:index-stage-sdk-test:${indexStagePluginSDKVersion}"
 }
 
 // specific task that allows to create proper plugin zip file

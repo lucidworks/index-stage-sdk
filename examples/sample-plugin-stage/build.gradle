@@ -8,10 +8,10 @@ repositories {
     }
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 
-version = '0.0.1'
+version = '0.0.2'//controls the version of the plugin jar and the zip file.
 
 configurations {
     provided // configuration for dependencies that are already present in Fusion
@@ -20,7 +20,7 @@ configurations {
 
 dependencies {
     // Index Stage SDK dependency is required for all plugins, version must be compatible with your Fusion deployment
-    provided "com.lucidworks-plugins.index-stage-sdk:index-stage-plugin-sdk:1.+"
+    provided "com.lucidworks-plugins.index-stage-sdk:index-stage-plugin-sdk:${indexStagePluginSDKVersion}"
 
     // prometheus client dependency is only needed if plugins are publishing custom metrics via Fusion
     provided 'io.prometheus:simpleclient_dropwizard:0.7.0'
@@ -30,7 +30,7 @@ dependencies {
     testImplementation "junit:junit:4.13"
     testImplementation "org.mockito:mockito-core:3.2.4"
     testImplementation "org.slf4j:slf4j-simple:1.7.30"
-    testImplementation "com.lucidworks-plugins.index-stage-sdk:index-stage-sdk-test:1.+"
+    testImplementation "com.lucidworks-plugins.index-stage-sdk:index-stage-sdk-test:${indexStagePluginSDKVersion}"
 }
 
 // use this gradle task to assemble plugin zip file
@@ -39,9 +39,11 @@ task assemblePlugin(type: Jar) {
     getArchiveExtension().set("zip")
     manifest {
         attributes 'Plugin-Id': 'sample-plugin'
-        attributes 'Plugin-Version': '0.0.1'
-        attributes 'Plugin-SDK-Version': '1.1.0'
+        attributes 'Plugin-Version': "${project.version}"
+        attributes 'Plugin-SDK-Version': "${indexStagePluginSDKVersion}"
         attributes 'Plugin-Base-Package': 'com.lucidworks.sample'
+        attributes "Build-JDK": "${System.properties['java.version']} (${System.properties['java.vendor']} ${System.properties['java.vm.version']})"
+        attributes "Dependencies": "index-stage-plugin-sdk:${indexStagePluginSDKVersion}"
     }
 
     into('lib') {

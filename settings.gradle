@@ -1,6 +1,3 @@
 rootProject.name = 'index-stage-sdk'
 include 'index-stage-plugin-sdk'
 include 'index-stage-sdk-test'
-
-includeBuild 'examples/sample-plugin-stage'
-includeBuild 'examples/copying-document-stage'
