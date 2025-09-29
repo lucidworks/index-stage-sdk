@@ -1,4 +1,4 @@
-@Library("one-platform-jenkins")_
+@Library("one-platform-jenkins@DEVX-424-use-official-sonar-scanner-image")_
 
 properties([
         [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false],
