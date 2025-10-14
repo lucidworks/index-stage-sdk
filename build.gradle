@@ -1,6 +1,5 @@
 plugins {
     id 'nebula.release' version '17.2.2' apply false
-    id 'org.sonarqube' version '3.0'
 }
 
 allprojects {
@@ -15,7 +14,6 @@ subprojects {
     apply plugin: 'java-library'
     apply plugin: 'maven-publish'
     apply plugin: 'jacoco'
-    apply plugin: 'org.sonarqube'
 
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
